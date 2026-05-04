@@ -1,0 +1,24 @@
+# Прайс-листы и локальные данные
+*.xlsx
+*.docx
+*.csv
+
+# Убедимся, что JSON попадает в репозиторий
+!master_materials_db.json
+
+# Виртуальные окружения
+venv/
+env/
+.env
+
+# Кэши Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Настройки Streamlit
+.streamlit/
+
+# Скрытые файлы ОС
+.DS_Store
+Thumbs.db

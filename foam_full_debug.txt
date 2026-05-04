@@ -1,0 +1,93 @@
+Листы в файле: ['Sheet1', 'transport', 'Sheet3']
+
+--- Лист: Sheet1 ---
+                              0        1              2        3        4    5               6        7    8   9   10  11  12   13  14        15        16   17       18   19
+0                            NaN  order :            NaN      NaN  RP25090  0.0             NaN  HR25070    0 NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+1                            NaN   date :            NaN      NaN  RP25140  0.0             NaN     HR35    0 NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+2                            NaN      NaN            NaN      NaN  RP30150  0.0             NaN  HR38150    0 NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+3                            sia   Moncor            NaN      NaN     RP35  0.0             NaN  HR44195    0 NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+4     PVN Reg.Nr.: LV40203206283      NaN            NaN      NaN      NaN  NaN             NaN  HR50200    0 NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+5   Krustpils 54C, Rīga, LV-1057      NaN            NaN      NaN      NaN  NaN             NaN      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+6     terms of payment  -7 days       NaN            NaN       KG        0  NaN             NaN      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+7                            NaN      NaN            NaN  LDM(mm)    50000  NaN             NaN      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+8               delivery address      NaN            NaN      PCS        0  NaN             NaN      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+9       Zilupes 7, Rīga, LV-1057      NaN            NaN      NaN      NaN  NaN           Total        0  Eur NaN NaN NaN NaN  0.0 NaN       NaN       NaN  NaN      NaN  NaN
+10                       contact    Jurij  +371 27770085      NaN      NaN  NaN             NaN      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+11                           NaN      NaN            NaN      NaN      NaN  NaN  Transport cost        0  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+13                         Alpek   size 1         size 2   size 3      pcs  NaN     EXW Tallinn      NaN  NaN NaN NaN NaN NaN  NaN NaN        m3  Total m3    q       kg   KG
+14                           NaN      NaN            NaN      NaN        *  NaN       price/pcs      NaN  NaN NaN NaN NaN NaN  NaN NaN       NaN       NaN  NaN      NaN  NaN
+15                       RP25090     2040           1620       10      NaN  NaN            3.14        0  NaN NaN NaN NaN NaN  0.0 NaN  0.033048         0   25   0.8262    0
+16                       RP25090     2040           1620       20      NaN  NaN            6.28        0  NaN NaN NaN NaN NaN  0.0 NaN  0.066096         0   25   1.6524    0
+17                       RP25090     2040           1620       30      NaN  NaN             9.3        0  NaN NaN NaN NaN NaN  0.0 NaN  0.099144         0   25   2.4786    0
+18                       RP25090     2040           1620       40      NaN  NaN            12.4        0  NaN NaN NaN NaN NaN  0.0 NaN  0.132192         0   25   3.3048    0
+19                       RP25090     2040           1620       50      NaN  NaN           14.88        0  NaN NaN NaN NaN NaN  0.0 NaN   0.16524         0   25    4.131    0
+20                       RP25090     2040           1620       60      NaN  NaN           17.85        0  NaN NaN NaN NaN NaN  0.0 NaN  0.198288         0   25   4.9572    0
+21                       RP25090     2040           1620       70      NaN  NaN           20.83        0  NaN NaN NaN NaN NaN  0.0 NaN  0.231336         0   25   5.7834    0
+22                       RP25090     2040           1620       80      NaN  NaN           23.47        0  NaN NaN NaN NaN NaN  0.0 NaN  0.264384         0   25   6.6096    0
+23                       RP25090     2040           1620       90      NaN  NaN            26.4        0  NaN NaN NaN NaN NaN  0.0 NaN  0.297432         0   25   7.4358    0
+24                       RP25090     2040           1620      100      NaN  NaN           29.34        0  NaN NaN NaN NaN NaN  0.0 NaN   0.33048         0   25    8.262    0
+25                       RP25090     2040           1620      110      NaN  NaN           32.27        0  NaN NaN NaN NaN NaN  0.0 NaN  0.363528         0   25   9.0882    0
+26                       RP25090     2040           1620      120      NaN  NaN            35.2        0  NaN NaN NaN NaN NaN  0.0 NaN  0.396576         0   25   9.9144    0
+27                       RP25090     2040           1620      130      NaN  NaN            37.6        0  NaN NaN NaN NaN NaN  0.0 NaN  0.429624         0   25  10.7406    0
+28                       RP25090     2040           1620      140      NaN  NaN           40.49        0  NaN NaN NaN NaN NaN  0.0 NaN  0.462672         0   25  11.5668    0
+29                       RP25090     2040           1620      150      NaN  NaN           43.38        0  NaN NaN NaN NaN NaN  0.0 NaN   0.49572         0   25   12.393    0
+30                       RP25090     2040           1620      160      NaN  NaN           46.27        0  NaN NaN NaN NaN NaN  0.0 NaN  0.528768         0   25  13.2192    0
+31                       RP25090     2040           1620      170      NaN  NaN           48.46        0  NaN NaN NaN NaN NaN  0.0 NaN  0.561816         0   25  14.0454    0
+32                       RP25090     2040           1620      180      NaN  NaN           51.31        0  NaN NaN NaN NaN NaN  0.0 NaN  0.594864         0   25  14.8716    0
+33                       RP25090     2040           1620      190      NaN  NaN           54.16        0  NaN NaN NaN NaN NaN  0.0 NaN  0.627912         0   25  15.6978    0
+34                       RP25090     2040           1620      200      NaN  NaN           57.01        0  NaN NaN NaN NaN NaN  0.0 NaN   0.66096         0   25   16.524    0
+37                       RP25140     2040           1620       10      NaN  NaN             3.1        0  NaN NaN NaN NaN NaN  0.0 NaN  0.033048         0   25   0.8262    0
+38                       RP25140     2040           1620       20      NaN  NaN             6.2        0  NaN NaN NaN NaN NaN  0.0 NaN  0.066096         0   25   1.6524    0
+39                       RP25140     2040           1620       30      NaN  NaN            8.93        0  NaN NaN NaN NaN NaN  0.0 NaN  0.099144         0   25   2.4786    0
+40                       RP25140     2040           1620       40      NaN  NaN            11.9        0  NaN NaN NaN NaN NaN  0.0 NaN  0.132192         0   25   3.3048    0
+41                       RP25140     2040           1620       50      NaN  NaN           14.88        0  NaN NaN NaN NaN NaN  0.0 NaN   0.16524         0   25    4.131    0
+42                       RP25140     2040           1620       60      NaN  NaN            17.6        0  NaN NaN NaN NaN NaN  0.0 NaN  0.198288         0   25   4.9572    0
+
+--- Лист: transport ---
+      0                       1             2    3       4   5      6             7     8      9
+0     H                       0           EUR  0.0     NaN NaN    NaN           NaN  LDM=  50000
+1   NaN                                   NaN  NaN     NaN NaN    NaN           NaN   NaN    NaN
+2   NaN                       H  Lehmja- Riga  NaN     NaN NaN    LDM  Lehmja- Riga   NaN    NaN
+3   NaN                       0             0  NaN     NaN NaN      0             0   NaN    NaN
+4   NaN                     400            60  0.0   400.0 NaN    400            60   NaN    NaN
+5   NaN                     800            80  0.0   800.0 NaN    800            80   NaN    NaN
+6   NaN                    1200            90  0.0  1200.0 NaN   1200            90   NaN    NaN
+7   NaN                    1600           100  0.0  1600.0 NaN   1600           100   NaN    NaN
+8   NaN                    2000           100  0.0  1600.0 NaN   2000           110   NaN    NaN
+9   NaN                    2400           100  0.0  1600.0 NaN   2400           120   NaN    NaN
+10  NaN                    2800           100  0.0  1600.0 NaN   2800           130   NaN    NaN
+11  NaN                    3000           100  0.0  1600.0 NaN    NaN           NaN   NaN    NaN
+12  NaN                    3200           110  0.0  2000.0 NaN   3200           140   NaN       
+13  NaN                    3600           120  0.0  2400.0 NaN   3600           150   NaN    NaN
+14  NaN                    4000           130  0.0  2800.0 NaN   4000           160   NaN    NaN
+15  NaN                    4400           140  0.0  3200.0 NaN   4400           170   NaN    NaN
+16  NaN                    4800           140  0.0  3200.0 NaN   4800           180   NaN    NaN
+17  NaN                    5200           140  0.0  3200.0 NaN   5200           190   NaN    NaN
+18  NaN                    5600           140  0.0  3200.0 NaN   5600           200   NaN    NaN
+19  NaN                    6000           140  0.0  3200.0 NaN   6000           210   NaN    NaN
+20  NaN                    6200           150  0.0  3600.0 NaN    NaN           NaN   NaN    NaN
+21  NaN                    6400           160  0.0  3600.0 NaN   6400           220   NaN    NaN
+22  NaN                    6800           170  0.0  4400.0 NaN   6800           230   NaN    NaN
+23  NaN                    7000           180  0.0  4800.0 NaN    NaN           NaN   NaN    NaN
+24  NaN                    7200           NaN  0.0     NaN NaN   7200           240   NaN    NaN
+25  NaN                    7600           NaN  0.0     NaN NaN   7600           250   NaN    NaN
+26  NaN                    8000           NaN  0.0     NaN NaN   8000           260   NaN    NaN
+27  NaN                    8400           NaN  0.0     NaN NaN   8400           270   NaN    NaN
+28  NaN                    8800           NaN  0.0     NaN NaN   8800           280   NaN    NaN
+29  NaN                    9200           NaN  0.0     NaN NaN   9200           290   NaN    NaN
+30  NaN                    9600           NaN  0.0     NaN NaN   9600           300   NaN    NaN
+31  NaN                   10000           NaN  0.0     NaN NaN  10000           310   NaN    NaN
+32  NaN                   10400           NaN  0.0     NaN NaN  10400           320   NaN    NaN
+33  NaN                   10800           NaN  0.0     NaN NaN  10800           330   NaN    NaN
+34  NaN                   11200           NaN  0.0     NaN NaN  11200           340   NaN    NaN
+35  NaN                   11600           NaN  0.0     NaN NaN  11600           350   NaN    NaN
+36  NaN                   12000           NaN  0.0     NaN NaN  12000           360   NaN    NaN
+37  NaN                   12400           NaN  0.0     NaN NaN  12400           370   NaN    NaN
+38  NaN                   12800           NaN  0.0     NaN NaN  12800           380   NaN    NaN
+39  NaN                   13200           NaN  0.0     NaN NaN  13200           390   NaN    NaN
+
+--- Лист: Sheet3 ---
+Empty DataFrame
+Columns: []
+Index: []
+
