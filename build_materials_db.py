@@ -1,13 +1,20 @@
 import pandas as pd
-import docx
 import os
 import json
 import re
 import traceback
+import datetime
 
 def clean_price(price_str):
     if pd.isna(price_str) or price_str is None: 
         return None
+        
+    if isinstance(price_str, (datetime.datetime, pd.Timestamp)):
+        try:
+            return float(f"{price_str.month}.{price_str.day:02d}")
+        except:
+            pass
+
     s = str(price_str).lower().replace('€', '').replace('eur', '').replace(' ', '').replace('\xa0', '')
     s = s.replace(',', '.')
     match = re.search(r'\d+\.?\d*', s)
@@ -25,17 +32,7 @@ def extract_size(text):
         return match.group(0)
     return "-"
 
-def determine_plywood_subcategory(name):
-    n = name.lower()
-    if 'обрезки' in n or 'rumbula' in n or 'stock' in n or 'спецпредлож' in n:
-        return "Спецпредложения: Обрезки (Rumbula Stock)"
-    if 'f/w' in n or 'tex' in n or 'сетч' in n:
-        return "Фанера с сетчатым покрытием (Riga Tex / F/W)"
-    if 'f/f' in n or 'ламин' in n or 'riga wood' in n:
-        return "Ламинированная фанера (Riga Wood / F/F)"
-    if 'bb' in n or 'wg' in n or 'шлиф' in n:
-        return "Шлифованная березовая фанера (Сорт BB/WG)"
-    return "Стандартная фанера"
+
 
 def process_fabric(filepath):
     print(f"Читаем файл: {os.path.basename(filepath)}")
@@ -137,89 +134,41 @@ def process_foam(filepath):
             })
     return records
 
-def extract_docx_tables(filepath, default_category):
-    print(f"Читаем файл: {os.path.basename(filepath)}")
-    doc = docx.Document(filepath)
+def get_plywood_records():
+    plywood_data = [
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 4.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 18.50, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 6.5, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 24.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 9.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 31.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 12.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 39.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 15.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 46.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 18.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 54.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 21.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 62.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Шлифованная березовая", "Толщина": 24.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 71.00, "Единица измерения": "лист"},
+        
+        {"Категория": "Фанера", "Подкатегория": "Ламинированная (Riga Wood)", "Толщина": 9.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 38.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Ламинированная (Riga Wood)", "Толщина": 12.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 45.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Ламинированная (Riga Wood)", "Толщина": 15.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 53.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Ламинированная (Riga Wood)", "Толщина": 18.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 59.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "Ламинированная (Riga Wood)", "Толщина": 21.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 67.00, "Единица измерения": "лист"},
+        
+        {"Категория": "Фанера", "Подкатегория": "С сетчатым покрытием", "Толщина": 15.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 58.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "С сетчатым покрытием", "Толщина": 18.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 65.00, "Единица измерения": "лист"},
+        {"Категория": "Фанера", "Подкатегория": "С сетчатым покрытием", "Толщина": 21.0, "Размер": "1250 x 2500", "Ширина": 1250, "Цена (с НДС)": 74.00, "Единица измерения": "лист"}
+    ]
+    
     records = []
-    
-    vendor = "Неизвестно"
-    if "фанер" in filepath.lower() or "латвия" in filepath.lower():
-        vendor = "Latvijas Finieris / Riga Wood"
-    
-    for table in doc.tables:
-        for row in table.rows:
-            cells = [cell.text.strip().replace('\n', ' ') for cell in row.cells]
-            clean_cells = []
-            for c in cells:
-                if c and (not clean_cells or clean_cells[-1] != c):
-                    clean_cells.append(c)
-            
-            if len(clean_cells) < 2:
-                continue
-                
-            prices = []
-            price_indices = []
-            for i, c in enumerate(clean_cells):
-                cp = clean_price(c)
-                if cp is not None and cp > 0:
-                    prices.append(cp)
-                    price_indices.append(i)
-            
-            if prices:
-                price = prices[-1] 
-                price_idx = price_indices[-1]
-                
-                name_parts = clean_cells[:price_idx]
-                name = " ".join(name_parts).strip()
-                if not name:
-                    name = "Неизвестно"
-                
-                parsed_size = "-"
-                size_match = re.search(r'(\d+\s*[xхX]\s*\d+)', name)
-                if size_match:
-                    parsed_size = size_match.group(1).replace(' ', '')
-                
-                parsed_thick = "-"
-                thick_match_mm = re.search(r'(\d+[\.,]?\d*)\s*(?:мм|mm)', name, re.IGNORECASE)
-                if thick_match_mm:
-                    parsed_thick = thick_match_mm.group(1)
-                else:
-                    name_without_size = name.replace(size_match.group(1), '') if size_match else name
-                    thick_match_first = re.search(r'(?<!\d)(\d+[\.,]?\d*)(?!\d)', name_without_size)
-                    if thick_match_first:
-                        parsed_thick = thick_match_first.group(1)
-
-                category = default_category
-                subcategory = "-"
-                
-                name_lower = name.lower()
-                if 'дсп' in name_lower: 
-                    category = 'ДСП'
-                elif 'мдф' in name_lower: 
-                    category = 'МДФ'
-                elif 'фанера' in name_lower or default_category == 'Фанера': 
-                    category = 'Фанера'
-                    subcategory = determine_plywood_subcategory(name)
-                    name = "Стандартная фанера"
-                
-                unit = "лист"
-                if "обрезки" in name_lower or "спецпредлож" in name_lower: 
-                    unit = "шт" 
-
-                w_match = re.search(r'(\d+)\s*[xхX]\s*(\d+)', parsed_size)
-                w_val = str(min(int(w_match.group(1)), int(w_match.group(2)))) if w_match else "-"
-
-                records.append({
-                    "Категория": category,
-                    "Подкатегория": subcategory,
-                    "Производитель": vendor,
-                    "Название/Сорт": name,
-                    "Толщина": parsed_thick,
-                    "Размер": parsed_size,
-                    "Ширина материала": w_val,
-                    "Единица измерения": unit,
-                    "Цена (с НДС)": price
-                })
+    for d in plywood_data:
+        records.append({
+            "Категория": d["Категория"],
+            "Подкатегория": d["Подкатегория"],
+            "Производитель": "Latvijas Finieris / Riga Wood",
+            "Название/Сорт": f"Фанера ({d['Подкатегория']})",
+            "Толщина": str(d["Толщина"]),
+            "Размер": d["Размер"],
+            "Ширина материала": str(d["Ширина"]),
+            "Единица измерения": d["Единица измерения"],
+            "Цена (с НДС)": d["Цена (с НДС)"]
+        })
     return records
 
 def get_mdf_dsp_records():
@@ -286,7 +235,8 @@ def main():
         traceback.print_exc()
         
     try:
-        all_records.extend(extract_docx_tables(os.path.join(cwd, "Прайс-лист на фанеру (Латвия).docx"), "Фанера"))
+        print("Добавляем данные по фанере...")
+        all_records.extend(get_plywood_records())
     except Exception as e:
         print(f"Ошибка при обработке фанеры: {e}")
         traceback.print_exc()
