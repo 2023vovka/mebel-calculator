@@ -166,7 +166,7 @@ def main():
     st.title("🧮 Калькулятор стоимости материалов")
     st.markdown("Загрузите выгрузки из SketchUp в формате `.csv` для мгновенного расчета стоимости проекта.")
     
-    cwd = r"f:\Антигравити ии\калькулятор материалов"
+    cwd = os.path.dirname(os.path.abspath(__file__))
     db_file = os.path.join(cwd, "master_materials_db.json")
     
     if not os.path.exists(db_file):

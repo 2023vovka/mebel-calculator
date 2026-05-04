@@ -270,7 +270,7 @@ def get_mdf_dsp_records():
     return records
 
 def main():
-    cwd = r"f:\Антигравити ии\калькулятор материалов"
+    cwd = os.path.dirname(os.path.abspath(__file__))
     all_records = []
     
     try:
